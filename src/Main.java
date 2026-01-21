@@ -1,76 +1,72 @@
 import java.util.Arrays;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
         System.out.println("Задача 1:");
-        int [] width = new int [3];
-        width [0] = 1;
-        width [1] = 2;
-        width [2] = 3;
-
-        float[] height = {1.57f, 7.654f, 9.986f};
-
-        int [] thickness = {10, 20, 30};
+        int[] inputArray1 = {15, 25, 10, 44, 50};
+        int sum = 0;
+        int max = inputArray1[0];
+        int min = inputArray1[0];
+        float middle = sum / inputArray1.length;
+        System.out.println(Arrays.toString(inputArray1));
+        float[] outputArray1 = {sum, max, min, middle};
+        for (int i = 0; i < inputArray1.length; i++) {
+        }
+        for (int i : inputArray1) {
+            sum += i;
+        }
+        for (int i : inputArray1) {
+            if (i > max) {
+                max = i;
+            }
+        }
+        for (int i : inputArray1) {
+            if (i < min) {
+                min = i;
+            }
+        }
+        System.out.println("outputArray1: " + sum + ", " + max + ", " + min + ", " + middle);
 
         System.out.println("Задача 2:");
-        for (int i = 0; i < width.length; i++) {
-            if (i == width.length - 1) {
-                System.out.print(width[i]);
-                break;
-            }
-            System.out.print(width[i] + ", ");
+        int[] inputArray2 = {1500, 25000, 10000, 44000, 50000};
+        int element = 0;
+        float[] outputArray2 = new float[5];
+        for (float pay : inputArray2) {
+            float tax = pay * 0.13f;
+            outputArray2[element] = tax;
+            element++;
+            System.out.println(tax);
         }
-        System.out.println();
-        for (int r = 0; r < height.length; r++) {
-            if (r == height.length - 1) {
-                System.out.print(height[r]);
-                break;
-            }
-            System.out.print(height[r] + ", ");
-        }
-        System.out.println();
-        for (int t = 0; t < thickness.length; t++) {
-            if (t == thickness.length - 1) {
-                System.out.print(thickness[t]);
-                break;
-            }
-            System.out.print(thickness[t] + ", ");
-        }
-        System.out.println();
-
 
         System.out.println("Задача 3:");
-        for (int i = width.length - 1; i >= 0; i--) {
-            System.out.print(width[i]);
-            if (i > 0) {
-                System.out.print(", ");
+        int[] inputArray3 = {1500, 25000, 10000, 44000, 50000};
+        int index = 0;
+        boolean[] outputArray3 = new boolean[5];
+        for (int prize : inputArray3) {
+            if (prize > 5000) {
+                outputArray3[index] = true;
+            } else {
+                outputArray3[index] = false;
             }
+            index++;
         }
-        System.out.println();
-        for (int i = height.length - 1; i >= 0; i--) {
-            System.out.print(height[i]);
-            if (i > 0) {
-                System.out.print(", ");
-            }
-        }
-        System.out.println();
-        for (int i = thickness.length - 1; i >= 0; i--) {
-            System.out.print(thickness[i]);
-            if (i > 0) {
-                System.out.print(", ");
-            }
-        }
-        System.out.println();
+        System.out.println(Arrays.toString(inputArray3));
+        System.out.println(Arrays.toString(outputArray3));
 
         System.out.println("Задача 4:");
-        for (int i = 0; i < width.length; i++) {
-            if (width[i] % 2 != 0) {
-                width[i] += 1;
-                System.out.print(width[i]+", ");
+        int[] inputArray4 = {1500, -25000, 10000, 44000, -50000};
+        boolean outputFlag = true;
+
+        for (int i = 0; i < inputArray4.length; i++) {
+            if (inputArray4[i] < 0) {
+                outputFlag = false;
+                break;
             }
         }
-        System.out.println();
+
+        System.out.println(outputFlag);
+
     }
 }
+
+
